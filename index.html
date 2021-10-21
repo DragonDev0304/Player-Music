@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Resource/CSS/app.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <div id="website" class="website">
+        <div class="dashboard">
+            <!-- header -->
+            <header class="header">
+                <h6 class="header__title">Now playing:</h6>
+                <h4 id="header__songName" class="header__songName">Song Name</h4>
+            </header>
+            <!-- CD -->
+            <div id="CD" class="CD">
+                <div id="CD__image" class="CD__image" style="background-image: url('./Resource/Image/test-0.jpg');">
+                </div>
+            </div>
+            <!-- control -->
+            <div class="control">
+                <button id="control__repeat" class="control__button control__repeat"><i
+                        class="fas fa-redo"></i></button>
+                <button id="control__previous" class="control__button control__previous"><i
+                        class="fas fa-step-backward"></i></button>
+                <button id="control__play-pause" class="control__button control__play-pause">
+                    <i class="fas fa-play icon-play"></i>
+                    <i class="fas fa-pause icon-pause"></i>
+                </button>
+                <button id="control__next" class="control__button control__next"><i
+                        class="fas fa-step-forward"></i></button>
+                <button id="control__random" class="control__button control__random"><i
+                        class="fas fa-random"></i></button>
+            </div>
+            <!-- progress -->
+            <input id="progress" class="progress" type="range" value="0" min="0" max="100" step="1">
+            <!-- audio -->
+            <audio src="" id="audio"></audio>
+        </div>
+        <!-- main -->
+        <main class="main">
+            <!-- song list -->
+            <ul id="songList" class="songList">
+                <!-- song -->
+            </ul>
+        </main>
+    </div>
+    <script src="./Resource/JavaScript/script.js" defer></script>
+</body>
+
+</html>

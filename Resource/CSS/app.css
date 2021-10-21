@@ -1,0 +1,241 @@
+/** variable */
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+/** DEFAULT STYLE */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: white;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(211, 211, 211);
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+.control__button.active {
+  color: var(--primary-color);
+}
+.songList__item.activeSong {
+  background-color: var(--primary-color);
+}
+/** CUSTOM STYLE */
+/* website */
+.website {
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  color: var(--text-color);
+}
+.main {
+  margin-top: 380px;
+}
+/* dashboard */
+.dashboard {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(00, 00, 00, 0.6);
+  border-radius: 5px;
+  padding: 18px 8px;
+  z-index: 99;
+}
+/* header */
+.header {
+  text-align: center;
+}
+.header__title {
+  color: var(--primary-color);
+  margin-bottom: 3px;
+}
+.header__songName {
+  font-size: 1.1rem;
+}
+@keyframes rotateCD {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* CD */
+.CD {
+  width: 200px;
+  margin: 10px auto 0;
+  filter: drop-shadow(0 0 3px black);
+  background-color: var(--primary-color);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.CD__image {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* animation: rotateCD linear 10s infinite; */
+}
+/* control */
+.control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 0 10px;
+}
+.control__button {
+  padding: 12px;
+  min-width: 50px;
+  color: var(--text-color);
+  transition: all ease 0.1s;
+  background-color: transparent;
+}
+.control__button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+.control__play-pause {
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 0 8px rgba(236, 31, 85, 0.8);
+  font-size: 1.3rem;
+}
+.control__play-pause:hover {
+  box-shadow: 0 0 10px rgba(236, 31, 85, 0.6);
+}
+.control__previous {
+  margin-right: 4px;
+}
+.control__next {
+  margin-left: 4px;
+}
+.progress {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(122, 122, 122, 0.5);
+  outline: none;
+  height: 6px;
+}
+.progress::-webkit-slider-thumb {
+  background-color: var(--primary-color);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 8px rgba(100, 100, 100, 0.8);
+}
+
+.songList {
+  list-style-type: none;
+  background-color: transparent;
+  width: 95%;
+  margin: 20px auto 0;
+}
+.songList__item {
+  display: flex;
+  align-items: center;
+  padding: 15px 3px;
+  background-color: white;
+  box-shadow: 0 1px 6px rgba(88, 88, 88, 0.5);
+  border-radius: 3px;
+  transition: all ease 0.1s;
+}
+.songList__item:hover {
+  filter: brightness(0.9);
+}
+.songList__item:active {
+  box-shadow: 0 1px 2px rgba(88, 88, 88, 0.2);
+}
+
+.songList__item + .songList__item {
+  margin-top: 10px;
+}
+.songList__item-image {
+  width: 20%;
+  clip-path: circle(32% at 50% 50%);
+}
+.songList__item-menuButton {
+  margin-left: auto;
+  margin-right: 2%;
+  padding: 12px;
+  color: var(--text-color);
+  background-color: transparent;
+  cursor: pointer;
+  flex-grow: 1;
+}
+.songList__item-information {
+  width: 65%;
+}
+.songList__item-songName {
+  font-size: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.songList__item-authorName {
+  margin-top: 3px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.website .icon-pause {
+  display: none;
+}
+
+.website.playing .icon-play {
+  display: none;
+}
+.website.playing .icon-pause {
+  display: block;
+}
